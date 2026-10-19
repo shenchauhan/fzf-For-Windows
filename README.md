@@ -1,30 +1,30 @@
-# fzf for Windows
+# ⚡ fzf for Windows
 
-A small PowerShell setup script that brings [fzf](https://github.com/junegunn/fzf) fuzzy finding to Windows Terminal. Use familiar shortcuts to search files, command history, and more without leaving the command line.
+Give your Windows Terminal a fuzzy-finding superpower! This quick setup brings [fzf](https://github.com/junegunn/fzf) to PowerShell 7, so you can jump to files, revisit commands, and complete paths without breaking your flow.
 
 <img src="https://github.com/user-attachments/assets/6c4def79-be17-4668-b4f8-f27714cb67d8" alt="fzf searching for PowerToys in Windows Terminal">
 
-## What the installer does
+## Your new shortcuts
 
-`Install-Fzf.ps1`:
+Once installed, these shortcuts put fuzzy search right at your fingertips:
 
-- Installs `fzf` using WinGet if it is not already installed.
-- Installs the `PSFzf` PowerShell module for the current user if needed.
-- Adds fzf key bindings to the PowerShell 7 profile:
-  - **Ctrl+T** — find files and insert the selected path at the prompt.
-  - **Ctrl+R** — search command history.
-  - **Tab** — fuzzy completion.
-- Updates its marked profile section on subsequent runs rather than adding duplicate sections.
+- **Ctrl+T** — find a file and drop its path straight into your command.
+- **Ctrl+R** — search your command history and bring an old command back in seconds.
+- **Tab** — fuzzy-complete paths and other suggestions.
 
-## Requirements
+## What the installer sets up
+
+Run `Install-Fzf.ps1` to install `fzf` with WinGet and the `PSFzf` PowerShell module if they are not already present. It adds the shortcuts to your PowerShell 7 profile, and safely updates its marked section if you run it again.
+
+## Before you start
 
 - Windows with [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) available (provided by App Installer).
 - PowerShell 7.
 - An internet connection to download the packages and module.
 
-## Install
+## Get started
 
-Clone this repository, open PowerShell 7 in the repository folder, and run:
+Clone this repository, open PowerShell 7 in the repository folder, then run:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
@@ -33,12 +33,12 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 The execution-policy change applies only to the current PowerShell process. The script installs `PSFzf` for your user and adds the integration to the PowerShell 7 profile under your Documents folder. It does not configure other PowerShell versions.
 
-When installation completes, open a new PowerShell 7 session in Windows Terminal and try **Ctrl+T**, **Ctrl+R**, or **Tab**.
+That’s it! When installation completes, open a fresh PowerShell 7 session in Windows Terminal and try **Ctrl+T**, **Ctrl+R**, or **Tab**.
 
-## Troubleshooting
+## Quick fixes
 
 - **WinGet is not installed:** Install or update **App Installer** from the Microsoft Store, then run the script again.
 - **The shortcuts do not work:** Confirm that the Windows Terminal tab is running PowerShell 7, then open a new session so it loads the updated profile.
 - **`fzf` is not found after installation:** Open a new PowerShell session to refresh the environment and rerun the installer if needed.
 
-The script changes only the PowerShell 7 profile integration; it does not alter Windows Terminal settings.
+The script updates your PowerShell 7 profile integration—it does not change Windows Terminal settings. Happy searching!
